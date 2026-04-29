@@ -89,7 +89,7 @@ const Contact = () => {
           <div className="lg:col-span-7 reveal">
             <form
               onSubmit={handleSubmit}
-              className="relative rounded-sm border border-primary-foreground/15 bg-primary-foreground/[0.03] backdrop-blur-md p-8 md:p-12 shadow-elegant text-center"
+              className="relative rounded-sm border border-primary-foreground/15 bg-primary-foreground/[0.03] backdrop-blur-md p-8 md:p-12 shadow-elegant my-[130px] text-left"
             >
               <div className="mb-8 flex items-center justify-between">
                 <span className="font-serif italic text-xl text-gold">Begin a conversation</span>
