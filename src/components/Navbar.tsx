@@ -9,7 +9,7 @@ const links = [
 
 const Navbar = () => {
   return (
-    <header className="fixed top-0 inset-x-0 z-50">
+    <header className="fixed top-0 inset-x-0 z-50 bg-forest-deep/40 backdrop-blur-md border-b border-primary-foreground/10 shadow-sm">
       <div className="container flex h-20 items-center justify-between">
         <a href="#" className="flex items-baseline gap-2 group">
           <span className="font-serif text-2xl tracking-tight text-primary-foreground drop-shadow-sm">MPG</span>
