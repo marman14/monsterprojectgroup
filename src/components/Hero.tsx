@@ -1,5 +1,13 @@
 import heroImg from "@/assets/hero-mansion.jpg";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Shield, MapPin, Clock, UserCheck, Star } from "lucide-react";
+
+const trustItems = [
+  { icon: Shield, label: "Licensed & Insured" },
+  { icon: MapPin, label: "South Florida Based" },
+  { icon: Clock, label: "24-Hour Response Guarantee" },
+  { icon: UserCheck, label: "Dedicated Senior Contact" },
+  { icon: Star, label: "White-Glove Service" },
+];
 
 const Hero = () => {
   return (
@@ -28,19 +36,18 @@ const Hero = () => {
             className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-primary-foreground text-balance animate-fade-in-slow"
             style={{ animationDelay: "120ms" }}
           >
-            Owner's representation
+            Your project, managed
             <br />
-            for projects that
-            <br />
-            <span className="italic text-gold">demand precision.</span>
+            with <span className="italic text-gold">precision.</span>
           </h1>
 
           <p
             className="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-primary-foreground/80 animate-fade-in"
             style={{ animationDelay: "320ms" }}
           >
-            MPG brings disciplined oversight, executive-level communication, and quiet
-            confidence to high-end construction and development across South Florida.
+            MPG brings executive-level oversight, rigorous accountability, and calm
+            authority to luxury construction and development across South Florida.
+            We stand between you and every problem before you know it exists.
           </p>
 
           <div
@@ -51,33 +58,27 @@ const Hero = () => {
               href="#contact"
               className="group inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-xs uppercase tracking-[0.22em] text-accent-foreground shadow-gold transition-all duration-500 hover:bg-gold-soft"
             >
-              Schedule a Consultation
+              Start Your Project
               <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:rotate-45" />
             </a>
             <a
-              href="#services"
+              href="#approach"
               className="inline-flex items-center gap-3 rounded-full border border-primary-foreground/30 px-7 py-4 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-all duration-500 hover:border-accent hover:text-accent"
             >
-              View Services
+              See How We Work
             </a>
           </div>
         </div>
 
-        {/* Stats strip */}
+        {/* Trust Bar */}
         <div
-          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-px overflow-hidden rounded-sm border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-md animate-fade-in"
+          className="mt-16 flex flex-wrap items-center gap-6 md:gap-10 animate-fade-in"
           style={{ animationDelay: "640ms" }}
         >
-          {[
-            { k: "Owner's Rep", v: "Preconstruction to closeout" },
-            { k: "High-End Focus", v: "Residential & commercial" },
-            { k: "Fort Lauderdale", v: "Serving all South Florida" },
-          ].map((s) => (
-            <div key={s.k} className="bg-forest-deep/40 px-6 py-6">
-              <div className="font-serif text-xl text-primary-foreground">{s.k}</div>
-              <div className="mt-1 text-xs uppercase tracking-[0.18em] text-primary-foreground/60">
-                {s.v}
-              </div>
+          {trustItems.map((item) => (
+            <div key={item.label} className="flex items-center gap-2.5 text-primary-foreground/60">
+              <item.icon className="h-4 w-4 text-gold/70" />
+              <span className="text-[10px] uppercase tracking-[0.2em]">{item.label}</span>
             </div>
           ))}
         </div>
