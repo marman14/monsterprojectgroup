@@ -24,7 +24,7 @@ const projects = [
 ];
 
 const types = [
-  "Luxury residential ground-up homes",
+  "Luxury ground-up estates",
   "Estate renovations and additions",
   "Boutique hospitality and amenity spaces",
   "Executive office and workplace interiors",
@@ -40,15 +40,13 @@ const Projects = () => {
           <div className="lg:col-span-7">
             <span className="eyebrow">Project Types</span>
             <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-foreground text-balance">
-              Before they call,
+              Projects we manage
               <br />
-              <span className="italic text-forest">I will answer.</span>
+              <span className="italic text-forest">across South Florida.</span>
             </h2>
           </div>
           <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
-            From private estates to premium tenant improvements, MPG is structured on
-            the details that matter — and the steady presence that keeps every
-            stakeholder aligned.
+            MPG tracks scope, schedule, and budget across every project type.
           </p>
         </div>
 
@@ -94,7 +92,7 @@ const Projects = () => {
                 </span>
                 <span className="font-serif text-xl md:text-2xl text-foreground">{t}</span>
               </div>
-              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground opacity-0 -translate-x-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
+              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors duration-500 group-hover:text-accent">
                 South FL
               </span>
             </div>

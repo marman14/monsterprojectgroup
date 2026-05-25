@@ -5,7 +5,7 @@ const whyMpg = [
   {
     icon: Target,
     t: "Aligned Interests",
-    d: "We work for you — not the contractor. Every decision we make is in your financial interest. No kickbacks. No hidden relationships. Just pure accountability.",
+    d: "We work for you — not the contractor. Every decision we make is in your financial interest. No kickbacks. No hidden relationships. Just direct accountability.",
   },
   {
     icon: Eye,
@@ -15,7 +15,7 @@ const whyMpg = [
   {
     icon: Lightbulb,
     t: "Proactive Problem Solving",
-    d: "Construction is inherently complex. We don't wait for problems to surface — we anticipate them. Our job is to resolve issues before they cost you time or money.",
+    d: "Construction is complex. We don't wait for problems to surface — we anticipate them. Our job is to resolve issues before they cost you time or money.",
   },
 ];
 
@@ -53,14 +53,14 @@ const Approach = () => {
             </h2>
             <p className="mt-7 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground">
               Monster Project Group was founded on a simple belief: the people building
-              your vision should be accountable to you — not the other way around. We
+              your project should be accountable to you — not the other way around. We
               serve high-net-worth homeowners, developers, and institutional clients
               navigating complex residential and commercial builds across South Florida.
             </p>
             <p className="mt-4 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground">
-              Our team brings disciplined project management, transparent communication,
-              and quiet confidence to every engagement. We don't just track progress.
-              We protect your investment, your timeline, and your peace of mind.
+              Our team brings disciplined project management and transparent
+              communication to every project. We don't just track progress.
+              We protect your budget, your schedule, and your contract.
             </p>
           </div>
         </div>

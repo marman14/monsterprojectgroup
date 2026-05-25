@@ -1,12 +1,10 @@
 import heroImg from "@/assets/hero-mansion.jpg";
-import { ArrowDown, ArrowUpRight, Shield, MapPin, Clock, UserCheck, Star } from "lucide-react";
+import { ArrowDown, ArrowUpRight, MapPin, Clock, UserCheck } from "lucide-react";
 
 const trustItems = [
-  { icon: Shield, label: "Licensed & Insured" },
   { icon: MapPin, label: "South Florida Based" },
   { icon: Clock, label: "24-Hour Response Guarantee" },
   { icon: UserCheck, label: "Dedicated Senior Contact" },
-  { icon: Star, label: "White-Glove Service" },
 ];
 
 const Hero = () => {
@@ -45,9 +43,9 @@ const Hero = () => {
             className="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-primary-foreground/80 animate-fade-in"
             style={{ animationDelay: "320ms" }}
           >
-            MPG brings executive-level oversight, rigorous accountability, and calm
-            authority to luxury construction and development across South Florida.
-            We stand between you and every problem before you know it exists.
+            MPG brings executive-level oversight and rigorous accountability to
+            luxury construction and development across South Florida. We identify
+            problems before they hit your budget or schedule.
           </p>
 
           <div

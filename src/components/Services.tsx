@@ -4,8 +4,8 @@ const services = [
   {
     n: "01",
     t: "Pre-Construction Planning",
-    headline: "Set your project up to succeed before a single shovel hits the ground.",
-    d: "The most expensive mistakes in construction happen before construction begins. MPG joins your project during the design and planning phase to review plans for buildability, identify scope gaps, and establish accountability frameworks.",
+    headline: "Set your project up to succeed before construction starts.",
+    d: "The most expensive mistakes in construction happen before construction begins. MPG joins your project during the design and planning phase to review plans for buildability, identify scope gaps, and establish clear accountability between you and the contractor.",
     items: [
       "Contractor vetting & selection support",
       "Contract review & negotiation guidance",
@@ -18,7 +18,7 @@ const services = [
     n: "02",
     t: "Active Construction Management",
     headline: "On-site oversight, so you don't have to be.",
-    d: "During active construction, MPG serves as your eyes, ears, and advocate on-site. We conduct regular site visits, attend all critical inspections, manage RFIs and submittals, and maintain the paper trail that protects your interests.",
+    d: "During active construction, MPG is on-site to document progress, catch deficiencies, and hold the contractor to the schedule. We attend all critical inspections, manage RFIs and submittals, and maintain the paper trail that protects your interests.",
     items: [
       "Scheduled & unscheduled site visits",
       "Weekly progress reports with photos",
@@ -31,7 +31,7 @@ const services = [
     n: "03",
     t: "Owner's Representation",
     headline: "Your interests. Represented at every meeting, on every call.",
-    d: "An owner's representative acts as the professional extension of you throughout your project — attending design meetings, representing your interests in contractor negotiations, and ensuring your vision is translated accurately into every phase.",
+    d: "An owner's representative acts as the professional extension of you throughout your project — attending design meetings, representing your interests in contractor negotiations, and ensuring your plans are executed as specified.",
     items: [
       "Clients who travel or live out of state",
       "Investors managing multiple properties",
@@ -74,16 +74,16 @@ const Services = () => {
           <div className="lg:col-span-7">
             <span className="eyebrow text-primary-foreground/70">Services</span>
             <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-primary-foreground text-balance">
-              Everything you need to build
+              What we
               <br />
-              with <span className="italic text-gold">confidence.</span>
+              <span className="italic text-gold">manage.</span>
             </h2>
           </div>
           <p className="lg:col-span-5 text-primary-foreground/70 leading-relaxed">
             From the first design meeting to the final punch list, MPG manages every
-            phase of your project so you never have to wonder what's happening on site.
-            Every client receives dedicated oversight, structured weekly reporting, and
-            direct access to a senior MPG team member.
+            phase of your project. Every client receives dedicated oversight,
+            structured weekly reporting, and direct access to a senior MPG team
+            member.
           </p>
         </div>
 

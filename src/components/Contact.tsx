@@ -3,34 +3,83 @@ import { ArrowUpRight, Mail, MapPin, Check, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactImg from "@/assets/contact-interior.jpg";
 
+const INITIAL_FORM = {
+  name: "",
+  email: "",
+  phone: "",
+  location: "",
+  type: "",
+  budget: "",
+  startDate: "",
+  message: "",
+  referral: "",
+  // Honeypot — must stay empty for real users
+  website: "",
+};
+
 const Contact = () => {
   const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    location: "",
-    type: "",
-    budget: "",
-    startDate: "",
-    message: "",
-    referral: "",
-  });
+  const [form, setForm] = useState(INITIAL_FORM);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    toast({
-      title: "Thank you — we've received your project details.",
-      description: "A member of the MPG team will review your submission and respond within one business day.",
-    });
-    setForm({ name: "", email: "", phone: "", location: "", type: "", budget: "", startDate: "", message: "", referral: "" });
-    setTimeout(() => setSubmitted(false), 4000);
+    if (submitting) return;
+
+    const endpoint = import.meta.env.VITE_APPS_SCRIPT_URL as string | undefined;
+
+    if (!endpoint) {
+      toast({
+        variant: "destructive",
+        title: "Contact form is not configured",
+        description:
+          "Please email office@monsterprojectgroup.com directly while we resolve this.",
+      });
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      // Send as text/plain to avoid a CORS preflight against Google Apps Script.
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(form),
+        redirect: "follow",
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data?.ok) {
+        throw new Error(data?.error || "Could not send your message.");
+      }
+
+      setSubmitted(true);
+      toast({
+        title: "Thank you — we've received your project details.",
+        description:
+          "A member of the MPG team will review your submission and respond within one business day.",
+      });
+      setForm(INITIAL_FORM);
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.";
+      toast({
+        variant: "destructive",
+        title: "We couldn't send your message",
+        description: `${message} If the issue persists, please email office@monsterprojectgroup.com directly.`,
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -49,8 +98,8 @@ const Contact = () => {
             </h2>
             <p className="mt-6 max-w-md text-primary-foreground/70 leading-relaxed">
               Tell us what you're building. We'll respond within one business day
-              with a candid assessment and a clear path forward — no pressure, no
-              sales pitch.
+              with a direct assessment of your project and what oversight would
+              cost.
             </p>
 
             <div className="mt-10 image-reveal aspect-[4/5] overflow-hidden rounded-sm shadow-elegant">
@@ -109,6 +158,30 @@ const Contact = () => {
                 <span className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/50">
                   Confidential
                 </span>
+              </div>
+
+              {/* Honeypot: hidden from real users, visible to bots */}
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: "-10000px",
+                  top: "auto",
+                  width: "1px",
+                  height: "1px",
+                  overflow: "hidden",
+                }}
+              >
+                <label htmlFor="website">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -212,13 +285,15 @@ const Contact = () => {
 
               <button
                 type="submit"
-                disabled={submitted}
+                disabled={submitting || submitted}
                 className="mt-10 group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-accent px-8 py-4 text-xs uppercase tracking-[0.22em] text-accent-foreground shadow-gold transition-all duration-500 hover:bg-gold-soft disabled:bg-primary-foreground/20 disabled:text-primary-foreground"
               >
                 {submitted ? (
                   <>
                     <Check className="h-4 w-4" /> Sent
                   </>
+                ) : submitting ? (
+                  <>Sending…</>
                 ) : (
                   <>
                     Send My Project Details
