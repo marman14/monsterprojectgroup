@@ -1,0 +1,20 @@
+{
+  "name": "Monster Project Group",
+  "short_name": "MPG",
+  "description": "Luxury construction project management and owner's representation in South Florida.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d1f1a",
+  "theme_color": "#0d1f1a",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+/* TEAM */
+
+Monster Project Group
+Location: Fort Lauderdale, FL, USA
+Contact: office@monsterprojectgroup.com
+Web: https://monsterprojectgroup.com
+
+/* SITE */
+
+Last update: 2026-05-26
+Language: English (en-US)
+Doctype: HTML5
+IDE: Cursor
+Stack: Vite, React, TypeScript, Tailwind CSS, shadcn/ui
+Hosted on: Vercel
