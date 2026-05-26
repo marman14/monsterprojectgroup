@@ -4,17 +4,17 @@ const pillars = [
   {
     n: "01",
     t: "Disciplined oversight",
-    d: "Every meeting led, every decision documented, every commitment tracked.",
+    d: "Every meeting led. Every decision documented. Every commitment tracked.",
   },
   {
     n: "02",
-    t: "Independent counsel",
-    d: "We sit on your side of the table — protecting your interests at every step.",
+    t: "Independent representation",
+    d: "We sit on your side of the table, protecting your interests at every stage.",
   },
   {
     n: "03",
-    t: "Quiet execution",
-    d: "Calm, clear leadership that lets craftsmanship and craftsmen do their best work.",
+    t: "Clear execution",
+    d: "Organized leadership that keeps teams accountable and projects moving forward.",
   },
 ];
 
@@ -45,14 +45,14 @@ const Approach = () => {
           <div className="lg:col-span-7 reveal">
             <span className="eyebrow">Our Approach</span>
             <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-foreground text-balance">
-              Making progress
+              Bringing clarity to
               <br />
-              <span className="italic text-forest">manageable.</span>
+              <span className="italic text-forest">complex projects.</span>
             </h2>
             <p className="mt-7 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground">
-              Complex projects fail in the seams between teams. We close those
-              seams — translating design intent, contract language, and field
-              reality into a single, calm, executable plan.
+              Complex projects break down between teams. We keep communication
+              aligned, decisions documented, and execution progressing from
+              preconstruction through closeout.
             </p>
 
             {/* 3 pillars */}

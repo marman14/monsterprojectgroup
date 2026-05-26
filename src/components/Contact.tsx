@@ -92,14 +92,14 @@ const Contact = () => {
           <div className="lg:col-span-5 reveal">
             <span className="eyebrow text-primary-foreground/70">Contact</span>
             <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-primary-foreground text-balance">
-              Let's talk about
+              Your project,
               <br />
-              <span className="italic text-gold">your project.</span>
+              <span className="italic text-gold">led with care.</span>
             </h2>
             <p className="mt-6 max-w-md text-primary-foreground/70 leading-relaxed">
-              Tell us what you're building. We'll respond within one business day
-              with a direct assessment of your project and what oversight would
-              cost.
+              MPG provides owner-side leadership that keeps projects aligned
+              from day one. Tell us about your project — we'll be in touch
+              within one business day.
             </p>
 
             <div className="mt-10 image-reveal aspect-[4/5] overflow-hidden rounded-sm shadow-elegant">

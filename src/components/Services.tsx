@@ -4,7 +4,7 @@ const services = [
   {
     n: "01",
     t: "Preconstruction Advisory",
-    d: "Team assembly, scope alignment, budgeting, planning, and procurement strategy before work begins.",
+    d: "Team assembly, budgeting, planning, and coordination before construction begins.",
     items: [
       "Design Coordination",
       "Budget Development",
@@ -14,7 +14,7 @@ const services = [
   {
     n: "02",
     t: "Construction Oversight",
-    d: "Meeting leadership, site coordination, schedule tracking, issue resolution, and reporting throughout delivery.",
+    d: "Meeting leadership, site coordination, schedule tracking, issue resolution, and reporting.",
     items: [
       "Schedule Tracking",
       "Site Coordination",
@@ -24,7 +24,7 @@ const services = [
   {
     n: "03",
     t: "Owner Advocacy",
-    d: "Independent representation focused on your interests across quality, cost, contracts, and decision-making.",
+    d: "Independent representation focused on protecting your interests throughout the project.",
     items: [
       "Contract Negotiation",
       "Owner Interest Protection",
@@ -58,9 +58,8 @@ const Services = () => {
             </h2>
           </div>
           <p className="lg:col-span-5 text-primary-foreground/70 leading-relaxed">
-            Tailored owner's representation for discerning clients who expect
-            both polish and performance — from a single villa to a portfolio of
-            capital projects.
+            Disciplined owner's representation from preconstruction through
+            closeout.
           </p>
         </div>
 

@@ -19,6 +19,7 @@ const Hero = () => {
         />
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 bg-gradient-hero-side" />
+        <div className="absolute inset-0 bg-gradient-hero-corner" />
       </div>
 
       {/* Content */}
@@ -46,8 +47,9 @@ const Hero = () => {
             className="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-primary-foreground/80 animate-fade-in"
             style={{ animationDelay: "320ms" }}
           >
-            MPG brings disciplined oversight, executive-level communication, and quiet
-            confidence to high-end construction and development across South Florida.
+            MPG provides clear oversight for high-standard projects across South
+            Florida. From preconstruction to closeout, we keep projects aligned
+            and accountable.
           </p>
 
           <div
