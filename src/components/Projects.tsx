@@ -92,7 +92,7 @@ const Projects = () => {
                 </span>
                 <span className="font-serif text-xl md:text-2xl text-foreground">{t}</span>
               </div>
-              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors duration-500 group-hover:text-accent">
+              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground opacity-0 -translate-x-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
                 South FL
               </span>
             </div>

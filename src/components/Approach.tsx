@@ -1,21 +1,20 @@
 import blueprintImg from "@/assets/approach-blueprints.jpg";
-import { Target, Eye, Lightbulb } from "lucide-react";
 
-const whyMpg = [
+const pillars = [
   {
-    icon: Target,
-    t: "Aligned Interests",
-    d: "We work for you — not the contractor. Every decision we make is in your financial interest. No kickbacks. No hidden relationships. Just direct accountability.",
+    n: "01",
+    t: "Disciplined oversight",
+    d: "Every meeting led, every decision documented, every commitment tracked.",
   },
   {
-    icon: Eye,
-    t: "Total Transparency",
-    d: "You'll never wonder what's happening on your site. Weekly reports, real-time issue escalation, and direct access to a senior MPG team member are standard on every project.",
+    n: "02",
+    t: "Independent counsel",
+    d: "We sit on your side of the table — protecting your interests at every step.",
   },
   {
-    icon: Lightbulb,
-    t: "Proactive Problem Solving",
-    d: "Construction is complex. We don't wait for problems to surface — we anticipate them. Our job is to resolve issues before they cost you time or money.",
+    n: "03",
+    t: "Quiet execution",
+    d: "Calm, clear leadership that lets craftsmanship and craftsmen do their best work.",
   },
 ];
 
@@ -23,7 +22,6 @@ const Approach = () => {
   return (
     <section id="approach" className="relative bg-cream py-28 md:py-36">
       <div className="container">
-        {/* Value Proposition */}
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-20 items-center">
           {/* Image column */}
           <div className="lg:col-span-5 reveal">
@@ -45,46 +43,39 @@ const Approach = () => {
 
           {/* Text column */}
           <div className="lg:col-span-7 reveal">
-            <span className="eyebrow">About MPG</span>
+            <span className="eyebrow">Our Approach</span>
             <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-foreground text-balance">
-              Built for clients who demand
+              Making progress
               <br />
-              <span className="italic text-forest">more than a contractor.</span>
+              <span className="italic text-forest">manageable.</span>
             </h2>
             <p className="mt-7 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground">
-              Monster Project Group was founded on a simple belief: the people building
-              your project should be accountable to you — not the other way around. We
-              serve high-net-worth homeowners, developers, and institutional clients
-              navigating complex residential and commercial builds across South Florida.
+              Complex projects fail in the seams between teams. We close those
+              seams — translating design intent, contract language, and field
+              reality into a single, calm, executable plan.
             </p>
-            <p className="mt-4 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground">
-              Our team brings disciplined project management and transparent
-              communication to every project. We don't just track progress.
-              We protect your budget, your schedule, and your contract.
-            </p>
-          </div>
-        </div>
 
-        {/* Why MPG */}
-        <div className="mt-28 reveal">
-          <div className="text-center mb-14">
-            <span className="eyebrow justify-center">Why MPG</span>
-            <h2 className="mt-5 font-serif text-4xl md:text-5xl leading-[1.05] text-foreground">
-              What makes us <span className="italic text-forest">different.</span>
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-px bg-border overflow-hidden rounded-sm">
-            {whyMpg.map((item) => (
-              <div
-                key={item.t}
-                className="bg-cream group p-8 md:p-10 transition-colors duration-500 hover:bg-card"
-              >
-                <item.icon className="h-7 w-7 text-accent mb-5" />
-                <div className="font-serif text-xl md:text-2xl text-foreground">{item.t}</div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.d}</p>
-              </div>
-            ))}
+            {/* 3 pillars */}
+            <div className="mt-14 grid sm:grid-cols-3 gap-x-8 gap-y-10 max-w-2xl">
+              {pillars.map((p, i) => (
+                <div
+                  key={p.n}
+                  className={
+                    i === 0
+                      ? ""
+                      : "sm:border-l sm:border-border sm:pl-8"
+                  }
+                >
+                  <span className="font-serif text-sm text-accent">{p.n}</span>
+                  <h3 className="mt-6 font-serif text-lg md:text-xl text-foreground leading-snug">
+                    {p.t}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {p.d}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -44,6 +44,7 @@ export default {
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
+        'gradient-hero-side': 'var(--gradient-hero-side)',
         'gradient-gold': 'var(--gradient-gold)',
         'gradient-cream': 'var(--gradient-cream)',
       },

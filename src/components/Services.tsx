@@ -3,65 +3,45 @@ import { ArrowUpRight } from "lucide-react";
 const services = [
   {
     n: "01",
-    t: "Pre-Construction Planning",
-    headline: "Set your project up to succeed before construction starts.",
-    d: "The most expensive mistakes in construction happen before construction begins. MPG joins your project during the design and planning phase to review plans for buildability, identify scope gaps, and establish clear accountability between you and the contractor.",
+    t: "Preconstruction Advisory",
+    d: "Team assembly, scope alignment, budgeting, planning, and procurement strategy before work begins.",
     items: [
-      "Contractor vetting & selection support",
-      "Contract review & negotiation guidance",
-      "Schedule development & milestone mapping",
-      "Budget validation & contingency planning",
-      "Permit coordination & compliance review",
+      "Design Coordination",
+      "Budget Development",
+      "Contractor Selection",
     ],
   },
   {
     n: "02",
-    t: "Active Construction Management",
-    headline: "On-site oversight, so you don't have to be.",
-    d: "During active construction, MPG is on-site to document progress, catch deficiencies, and hold the contractor to the schedule. We attend all critical inspections, manage RFIs and submittals, and maintain the paper trail that protects your interests.",
+    t: "Construction Oversight",
+    d: "Meeting leadership, site coordination, schedule tracking, issue resolution, and reporting throughout delivery.",
     items: [
-      "Scheduled & unscheduled site visits",
-      "Weekly progress reports with photos",
-      "Real-time budget tracking & variance reporting",
-      "Change order review & negotiation",
-      "Quality control & punch list management",
+      "Schedule Tracking",
+      "Site Coordination",
+      "Quality Assurance",
     ],
   },
   {
     n: "03",
-    t: "Owner's Representation",
-    headline: "Your interests. Represented at every meeting, on every call.",
-    d: "An owner's representative acts as the professional extension of you throughout your project — attending design meetings, representing your interests in contractor negotiations, and ensuring your plans are executed as specified.",
+    t: "Owner Advocacy",
+    d: "Independent representation focused on your interests across quality, cost, contracts, and decision-making.",
     items: [
-      "Clients who travel or live out of state",
-      "Investors managing multiple properties",
-      "First-time custom home builders",
-      "Complex, multi-phase developments",
-    ],
-  },
-  {
-    n: "04",
-    t: "Project Recovery",
-    headline: "Your project is behind schedule and over budget. We fix that.",
-    d: "When a build goes off the rails — missed milestones, contractor disputes, runaway costs — we step in to stabilize and recover. Our team conducts a rapid audit, identifies root causes, and restructures the work plan.",
-    items: [
-      "72-hour project audit & root cause analysis",
-      "Contractor performance assessment",
-      "Revised schedule & budget development",
-      "Dispute documentation & resolution support",
+      "Contract Negotiation",
+      "Owner Interest Protection",
+      "Guidance & Advisory",
     ],
   },
 ];
 
 const marqueeItems = [
-  "Pre-Construction Planning",
-  "Construction Management",
-  "Owner's Representation",
-  "Project Recovery",
-  "Budget Oversight",
+  "Preconstruction Advisory",
+  "Construction Oversight",
+  "Owner Advocacy",
+  "Design Coordination",
+  "Budget Development",
   "Contract Negotiation",
-  "Quality Assurance",
-  "Permit Coordination",
+  "Contractor Selection",
+  "Owner Interest Protection",
 ];
 
 const Services = () => {
@@ -74,20 +54,17 @@ const Services = () => {
           <div className="lg:col-span-7">
             <span className="eyebrow text-primary-foreground/70">Services</span>
             <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-primary-foreground text-balance">
-              What we
-              <br />
-              <span className="italic text-gold">manage.</span>
+              Monster <span className="italic text-gold">Services.</span>
             </h2>
           </div>
           <p className="lg:col-span-5 text-primary-foreground/70 leading-relaxed">
-            From the first design meeting to the final punch list, MPG manages every
-            phase of your project. Every client receives dedicated oversight,
-            structured weekly reporting, and direct access to a senior MPG team
-            member.
+            Tailored owner's representation for discerning clients who expect
+            both polish and performance — from a single villa to a portfolio of
+            capital projects.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-primary-foreground/10 rounded-sm overflow-hidden reveal">
+        <div className="grid md:grid-cols-3 gap-px bg-primary-foreground/10 rounded-sm overflow-hidden reveal">
           {services.map((s) => (
             <article
               key={s.n}
@@ -97,12 +74,11 @@ const Services = () => {
                 <span className="font-serif text-xl text-gold">{s.n}</span>
                 <ArrowUpRight className="h-5 w-5 text-primary-foreground/40 transition-all duration-500 group-hover:text-accent group-hover:rotate-45" />
               </div>
-              <h3 className="mt-6 font-serif text-2xl md:text-3xl text-primary-foreground">
+              <h3 className="mt-8 font-serif text-2xl md:text-3xl text-primary-foreground">
                 {s.t}
               </h3>
-              <p className="mt-2 font-serif italic text-sm text-gold/80">{s.headline}</p>
               <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">{s.d}</p>
-              <ul className="mt-6 space-y-2">
+              <ul className="mt-8 space-y-3">
                 {s.items.map((i) => (
                   <li
                     key={i}

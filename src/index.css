@@ -49,7 +49,8 @@
     --gold: 38 55% 55%;
     --gold-soft: 38 45% 70%;
 
-    --gradient-hero: linear-gradient(180deg, hsl(156 45% 9% / 0.35) 0%, hsl(156 45% 9% / 0.55) 55%, hsl(156 45% 9% / 0.85) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(156 45% 6% / 0.55) 0%, hsl(156 45% 6% / 0.65) 50%, hsl(156 45% 6% / 0.9) 100%);
+    --gradient-hero-side: linear-gradient(90deg, hsl(156 45% 6% / 0.7) 0%, hsl(156 45% 6% / 0.45) 35%, hsl(156 45% 6% / 0.15) 60%, hsl(156 45% 6% / 0) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(38 60% 62%), hsl(38 50% 48%));
     --gradient-cream: linear-gradient(180deg, hsl(38 40% 97%) 0%, hsl(38 28% 92%) 100%);
 
