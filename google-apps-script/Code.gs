@@ -57,6 +57,25 @@ function doGet() {
   return json({ ok: true, service: 'MPG contact form' });
 }
 
+/**
+ * One-time diagnostic helper.
+ * Select "testSendEmail" from the function dropdown at the top of the
+ * Apps Script editor and press Run. The first time you'll be asked to
+ * authorize Gmail-send permission. If the email arrives in the inbox,
+ * the script + account + permissions are all healthy.
+ */
+function testSendEmail() {
+  MailApp.sendEmail({
+    to: CONFIG.TO,
+    name: CONFIG.SENDER_NAME,
+    subject: '[MPG diagnostic] Test email from Apps Script',
+    body:
+      'If you see this email in the office@monsterprojectgroup.com inbox, the Apps Script can send mail.\n' +
+      'Time: ' + new Date().toUTCString(),
+  });
+  Logger.log('Sent diagnostic email to ' + CONFIG.TO);
+}
+
 function doPost(e) {
   try {
     if (!e || !e.postData || !e.postData.contents) {
