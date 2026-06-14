@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     q: "How do I know if I need a project manager?",
-    a: "If you're not experienced in managing a construction project, or simply don't have the time to oversee it day-to-day, an owner's representative can provide clarity, accountability, and peace of mind. We coordinate teams, track commitments, and help keep your project on schedule, on budget, and moving forward. Most importantly, we keep the decisions in your hands while providing the information and oversight needed to make them with confidence.",
+    a: "If you're not experienced in managing a construction project, or simply don't have the time to oversee it day-to-day, an owner's representative can provide clarity, accountability, and peace of mind. Every major decision remains in your hands.",
   },
 ];
 
