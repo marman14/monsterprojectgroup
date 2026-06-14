@@ -2,6 +2,49 @@ import { useState } from "react";
 import { ArrowUpRight, Mail, MapPin, Check, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactImg from "@/assets/contact-interior.jpg";
+import {
+  buildInquiryPlainSummary,
+  buildInquirySubject,
+  type InquiryPayload,
+} from "../../lib/inquiryEmail";
+
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
+  | string
+  | undefined;
+
+const BUSINESS_NAME = "Monster Project Group";
+
+const PROJECT_TYPE_LABEL: Record<string, string> = {
+  "new-construction": "New Construction",
+  renovation: "Renovation",
+  commercial: "Commercial",
+  "project-recovery": "Project Recovery",
+  other: "Other",
+};
+
+const BUDGET_LABEL: Record<string, string> = {
+  "under-250k": "Under $250K",
+  "250k-500k": "$250K–$500K",
+  "500k-1m": "$500K–$1M",
+  "1m-5m": "$1M–$5M",
+  "5m-plus": "$5M+",
+};
+
+const START_DATE_LABEL: Record<string, string> = {
+  "already-started": "Already started",
+  "within-3-months": "Within 3 months",
+  "3-6-months": "3–6 months",
+  "6-12-months": "6–12 months",
+  planning: "Planning phase",
+};
+
+const REFERRAL_LABEL: Record<string, string> = {
+  google: "Google",
+  referral: "Referral",
+  "social-media": "Social Media",
+  "drive-by": "Drive-by",
+  other: "Other",
+};
 
 const INITIAL_FORM = {
   name: "",
@@ -17,6 +60,56 @@ const INITIAL_FORM = {
   website: "",
 };
 
+type FormData = typeof INITIAL_FORM;
+
+function buildSubmissionPayload(form: FormData): InquiryPayload {
+  const typeLabel = PROJECT_TYPE_LABEL[form.type] || form.type;
+
+  return {
+    name: form.name,
+    email: form.email,
+    phone: form.phone || "—",
+    location: form.location,
+    typeLabel,
+    budget: form.budget ? BUDGET_LABEL[form.budget] || form.budget : "—",
+    startDate: form.startDate
+      ? START_DATE_LABEL[form.startDate] || form.startDate
+      : "—",
+    referral: form.referral ? REFERRAL_LABEL[form.referral] || form.referral : "—",
+    message: form.message,
+  };
+}
+
+async function sendViaWeb3Forms(payload: InquiryPayload) {
+  if (!WEB3FORMS_ACCESS_KEY) {
+    throw new Error(
+      "Contact form is not configured yet. Add your free Web3Forms access key to enable email delivery."
+    );
+  }
+
+  const subject = buildInquirySubject(payload.name, payload.typeLabel);
+  const summary = buildInquiryPlainSummary(payload);
+
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      access_key: WEB3FORMS_ACCESS_KEY,
+      from_name: BUSINESS_NAME,
+      subject,
+      email: payload.email,
+      replyto: payload.email,
+      botcheck: "",
+      "Inquiry Summary": summary,
+    }),
+  });
+
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data?.success) {
+    throw new Error(data?.message || "Could not send your message.");
+  }
+}
+
 const Contact = () => {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
@@ -31,33 +124,18 @@ const Contact = () => {
     e.preventDefault();
     if (submitting) return;
 
-    const endpoint = import.meta.env.VITE_APPS_SCRIPT_URL as string | undefined;
-
-    if (!endpoint) {
-      toast({
-        variant: "destructive",
-        title: "Contact form is not configured",
-        description:
-          "Please email office@monsterprojectgroup.com directly while we resolve this.",
-      });
+    // Honeypot — silently pretend success for bots
+    if (form.website.trim()) {
+      setSubmitted(true);
+      setForm(INITIAL_FORM);
+      setTimeout(() => setSubmitted(false), 4000);
       return;
     }
 
     setSubmitting(true);
     try {
-      // Send as text/plain to avoid a CORS preflight against Google Apps Script.
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(form),
-        redirect: "follow",
-      });
-
-      const data = await res.json().catch(() => ({}));
-
-      if (!res.ok || !data?.ok) {
-        throw new Error(data?.error || "Could not send your message.");
-      }
+      const payload = buildSubmissionPayload(form);
+      await sendViaWeb3Forms(payload);
 
       setSubmitted(true);
       toast({

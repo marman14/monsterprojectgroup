@@ -46,7 +46,9 @@ const Projects = () => {
             </h2>
           </div>
           <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
-            MPG tracks scope, schedule, and budget across every project type.
+            Complex projects demand more than construction expertise. They require
+            accountability, communication, and leadership. MPG protects your interests
+            while keeping teams aligned and execution on track.
           </p>
         </div>
 

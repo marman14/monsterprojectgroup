@@ -4,7 +4,7 @@ const pillars = [
   {
     n: "01",
     t: "Disciplined oversight",
-    d: "Every meeting led. Every decision documented. Every commitment tracked.",
+    d: "Every meeting guided. Every decision documented. Every commitment tracked.",
   },
   {
     n: "02",
