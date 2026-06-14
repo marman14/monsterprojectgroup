@@ -43,8 +43,8 @@ const faqs = [
     a: "An owner's representative is a professional hired by the project owner — separate from the general contractor — to manage the build on the owner's behalf. The OR attends design meetings, reviews contracts and pay applications, tracks budget and schedule, and ensures the project is executed as specified. MPG serves as owner's representative for luxury residential and commercial builds across South Florida.",
   },
   {
-    q: "How do I know if my project needs a construction project manager?",
-    a: "If your project has a budget over $250K, multiple subcontractors, a compressed timeline, or you won't be on-site regularly, professional project management pays for itself. Our fee is almost always less than the cost of a single delay, rework, or contractor dispute.",
+    q: "How do I know if I need a project manager?",
+    a: "If you're not experienced in managing a construction project, or simply don't have the time to oversee it day-to-day, an owner's representative can provide clarity, accountability, and peace of mind. We coordinate teams, track commitments, and help keep your project on schedule, on budget, and moving forward. Most importantly, we keep the decisions in your hands while providing the information and oversight needed to make them with confidence.",
   },
 ];
 

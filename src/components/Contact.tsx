@@ -176,7 +176,7 @@ const Contact = () => {
             </h2>
             <p className="mt-6 max-w-md text-primary-foreground/70 leading-relaxed">
               MPG provides owner-side leadership that keeps projects aligned
-              from day one. Tell us about your project — we'll be in touch
+              from day one. Tell us about your project — we aim to respond
               within one business day.
             </p>
 

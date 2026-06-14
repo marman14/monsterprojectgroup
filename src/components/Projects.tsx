@@ -46,9 +46,9 @@ const Projects = () => {
             </h2>
           </div>
           <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
-            Complex projects demand more than construction expertise. They require
-            accountability, communication, and leadership. MPG protects your interests
-            while keeping teams aligned and execution on track.
+            Luxury construction succeeds when every party remains aligned, every
+            commitment is tracked, and every decision is documented. MPG brings
+            that structure to projects of every size and complexity.
           </p>
         </div>
 
