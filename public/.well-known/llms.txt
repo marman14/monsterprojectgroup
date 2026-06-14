@@ -1,0 +1,11 @@
+# Monster Project Group — LLM discovery file
+# Canonical copy: https://www.monsterprojectgroup.com/llms.txt
+
+> Monster Project Group (MPG) is a luxury construction project management and owner's representation firm in South Florida.
+
+- Website: https://www.monsterprojectgroup.com
+- Email: office@monsterprojectgroup.com
+- Full summary: https://www.monsterprojectgroup.com/llms.txt
+- Complete reference: https://www.monsterprojectgroup.com/llms-full.txt
+- Structured FAQ: https://www.monsterprojectgroup.com/answers.json
+- AI summary: https://www.monsterprojectgroup.com/ai.txt

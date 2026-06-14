@@ -1,5 +1,5 @@
 Contact: mailto:office@monsterprojectgroup.com
 Expires: 2027-12-31T23:59:59.000Z
 Preferred-Languages: en
-Canonical: https://monsterprojectgroup.com/.well-known/security.txt
-Policy: https://monsterprojectgroup.com/#contact
+Canonical: https://www.monsterprojectgroup.com/.well-known/security.txt
+Policy: https://www.monsterprojectgroup.com/#contact

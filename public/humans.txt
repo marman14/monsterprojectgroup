@@ -3,13 +3,20 @@
 Monster Project Group
 Location: Fort Lauderdale, FL, USA
 Contact: office@monsterprojectgroup.com
-Web: https://monsterprojectgroup.com
+Web: https://www.monsterprojectgroup.com
 
 /* SITE */
 
-Last update: 2026-05-26
+Last update: 2026-06-15
 Language: English (en-US)
 Doctype: HTML5
-IDE: Cursor
 Stack: Vite, React, TypeScript, Tailwind CSS, shadcn/ui
 Hosted on: Vercel
+
+/* SEO & AI DISCOVERY */
+
+Sitemap: https://www.monsterprojectgroup.com/sitemap.xml
+Robots: https://www.monsterprojectgroup.com/robots.txt
+LLMs: https://www.monsterprojectgroup.com/llms.txt
+AI: https://www.monsterprojectgroup.com/ai.txt
+FAQ JSON: https://www.monsterprojectgroup.com/answers.json

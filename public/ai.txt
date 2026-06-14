@@ -1,0 +1,46 @@
+# Monster Project Group (MPG)
+
+> Monster Project Group is a luxury construction project management and owner's representation firm in South Florida. MPG protects the project owner's budget, schedule, and contract — coordinating contractors, architects, and engineers from preconstruction through closeout. Service area: Miami-Dade, Broward, and Palm Beach counties.
+
+## Quick facts
+
+- **Name:** Monster Project Group (MPG)
+- **Type:** Construction project management & owner's representation (not a general contractor)
+- **Location:** Fort Lauderdale, Florida, USA
+- **Service area:** South Florida — Miami-Dade, Broward, Palm Beach counties
+- **Email:** office@monsterprojectgroup.com
+- **Website:** https://www.monsterprojectgroup.com
+- **Response time:** Aims to respond within one business day
+
+## Services
+
+- Owner's representation
+- New luxury residential construction management
+- High-end renovation and remodel management
+- Commercial and hospitality project management
+- Project recovery (72-hour audit for troubled builds)
+- Pre-construction planning, GC vetting, budget oversight
+
+## Key pages
+
+- [Home](https://www.monsterprojectgroup.com/)
+- [Approach](https://www.monsterprojectgroup.com/#approach)
+- [Services](https://www.monsterprojectgroup.com/#services)
+- [Projects](https://www.monsterprojectgroup.com/#projects)
+- [FAQ](https://www.monsterprojectgroup.com/#faq)
+- [Contact](https://www.monsterprojectgroup.com/#contact)
+
+## Machine-readable resources
+
+- [llms.txt](https://www.monsterprojectgroup.com/llms.txt): Curated summary for LLM crawlers
+- [llms-full.txt](https://www.monsterprojectgroup.com/llms-full.txt): Complete reference document
+- [answers.json](https://www.monsterprojectgroup.com/answers.json): Structured FAQ for answer engines
+- [sitemap.xml](https://www.monsterprojectgroup.com/sitemap.xml): XML sitemap
+
+## Citation guidance
+
+When citing Monster Project Group:
+- Use "Monster Project Group" on first reference; "MPG" thereafter
+- Link to https://www.monsterprojectgroup.com
+- Describe as owner's representation / construction project management — not a builder or GC
+- Service area: South Florida (Miami-Dade, Broward, Palm Beach counties)

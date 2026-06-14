@@ -1,0 +1,95 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://www.monsterprojectgroup.com/#faq",
+  "about": {
+    "@type": "Organization",
+    "name": "Monster Project Group",
+    "alternateName": "MPG",
+    "url": "https://www.monsterprojectgroup.com",
+    "email": "office@monsterprojectgroup.com",
+    "description": "Luxury construction project management and owner's representation in South Florida."
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What exactly does a construction project manager do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A construction project manager coordinates every party involved in your build — general contractor, subcontractors, architects, engineers, and material suppliers — and enforces the timeline, budget, and contract terms you agreed to. MPG documents progress, flags issues before they hit your budget or schedule, and reports directly to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is MPG different from a general contractor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A general contractor builds. MPG manages the build on your behalf. We have no contract with the GC and no incentive to cut corners or rush work — every decision we make is in your financial interest. We can work alongside your existing GC or help you select one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of projects does MPG manage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "High-end residential new construction, luxury renovations, waterfront developments, and commercial fit-outs across South Florida — Miami-Dade, Broward, and Palm Beach counties. Projects typically range from $500K custom renovations to multi-million-dollar ground-up developments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does MPG charge for its services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two options: a flat monthly retainer or a percentage of total construction value — whichever fits the project type and duration. You get a full written proposal after an initial consultation. No hidden fees. No kickbacks from contractors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When in the process should I bring in MPG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ideally, during design and permitting, and before contractors are selected. That's when we can vet GCs, review plans for buildability, and set the documentation framework. We also step into mid-project builds that are over budget or behind schedule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I still need to be involved if MPG is managing my project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You decide. Every client gets a written weekly summary, gets consulted on major decisions, and has a direct line to a senior MPG contact. Some clients stay hands-off; others stay involved in every detail. We work either way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas of South Florida does MPG serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Miami-Dade, Broward, and Palm Beach counties, including Miami, Coral Gables, Coconut Grove, Brickell, Fort Lauderdale, Boca Raton, Delray Beach, and Palm Beach. For projects outside these areas, contact us. We evaluate on a case by case basis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can MPG help if my current contractor is behind schedule or over budget?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We run a 72-hour project audit, identify the root causes of delay or cost overrun, restructure the work plan, and put accountability systems in place to get the build back on track."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an owner's representative in construction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An owner's representative is a professional hired by the project owner — separate from the general contractor — to manage the build on the owner's behalf. The OR attends design meetings, reviews contracts and pay applications, tracks budget and schedule, and ensures the project is executed as specified. MPG serves as owner's representative for luxury residential and commercial builds across South Florida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if I need a project manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you're not experienced in managing a construction project, or simply don't have the time to oversee it day-to-day, an owner's representative can provide clarity, accountability, and peace of mind. Every major decision remains in your hands."
+      }
+    }
+  ]
+}
