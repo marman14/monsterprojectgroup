@@ -2,17 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight, Mail, MapPin, Check, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactImg from "@/assets/contact-interior.jpg";
-import {
-  buildInquiryPlainSummary,
-  buildInquirySubject,
-  type InquiryPayload,
-} from "../../lib/inquiryEmail";
-
-const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
-  | string
-  | undefined;
-
-const BUSINESS_NAME = "Monster Project Group";
+import { type InquiryPayload } from "../../lib/inquiryEmail";
 
 const PROJECT_TYPE_LABEL: Record<string, string> = {
   "new-construction": "New Construction",
@@ -80,33 +70,16 @@ function buildSubmissionPayload(form: FormData): InquiryPayload {
   };
 }
 
-async function sendViaWeb3Forms(payload: InquiryPayload) {
-  if (!WEB3FORMS_ACCESS_KEY) {
-    throw new Error(
-      "Contact form is not configured yet. Add your free Web3Forms access key to enable email delivery."
-    );
-  }
-
-  const subject = buildInquirySubject(payload.name, payload.typeLabel);
-  const summary = buildInquiryPlainSummary(payload);
-
-  const res = await fetch("https://api.web3forms.com/submit", {
+async function sendContactForm(payload: InquiryPayload) {
+  const res = await fetch("/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      access_key: WEB3FORMS_ACCESS_KEY,
-      from_name: BUSINESS_NAME,
-      subject,
-      email: payload.email,
-      replyto: payload.email,
-      botcheck: "",
-      "Inquiry Summary": summary,
-    }),
+    body: JSON.stringify(payload),
   });
 
   const data = await res.json().catch(() => ({}));
-  if (!res.ok || !data?.success) {
-    throw new Error(data?.message || "Could not send your message.");
+  if (!res.ok || !data?.ok) {
+    throw new Error(data?.error || "Could not send your message.");
   }
 }
 
@@ -135,7 +108,7 @@ const Contact = () => {
     setSubmitting(true);
     try {
       const payload = buildSubmissionPayload(form);
-      await sendViaWeb3Forms(payload);
+      await sendContactForm(payload);
 
       setSubmitted(true);
       toast({
