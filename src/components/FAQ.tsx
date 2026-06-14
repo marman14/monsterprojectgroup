@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "When in the process should I bring in MPG?",
-    a: "The earlier the better — ideally during design and permitting, before contractors are selected. That's when we can vet GCs, review plans for buildability, and set the documentation framework. We also step into mid-project builds that are over budget or behind schedule.",
+    a: "Ideally, during design and permitting, and before contractors are selected. That's when we can vet GCs, review plans for buildability, and set the documentation framework. We also step into mid-project builds that are over budget or behind schedule.",
   },
   {
     q: "Do I still need to be involved if MPG is managing my project?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "What areas of South Florida does MPG serve?",
-    a: "Miami-Dade, Broward, and Palm Beach counties — including Miami, Coral Gables, Coconut Grove, Brickell, Fort Lauderdale, Boca Raton, Delray Beach, and Palm Beach. For projects outside these areas, contact us — we evaluate case by case.",
+    a: "Miami-Dade, Broward, and Palm Beach counties, including Miami, Coral Gables, Coconut Grove, Brickell, Fort Lauderdale, Boca Raton, Delray Beach, and Palm Beach. For projects outside these areas, contact us. We evaluate on a case by case basis.",
   },
   {
     q: "Can MPG help if my current contractor is behind schedule or over budget?",
