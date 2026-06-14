@@ -46,9 +46,9 @@ const Projects = () => {
             </h2>
           </div>
           <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
-            Luxury construction succeeds when every party remains aligned, every
-            commitment is tracked, and every decision is documented. MPG brings
-            that structure to projects of every size and complexity.
+            We provide owner-side representation for luxury residential,
+            hospitality, and commercial construction projects across South
+            Florida.
           </p>
         </div>
 
