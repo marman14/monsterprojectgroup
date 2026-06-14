@@ -79,7 +79,14 @@ async function sendContactForm(payload: InquiryPayload) {
 
   const data = await res.json().catch(() => ({}));
   if (!res.ok || !data?.ok) {
-    throw new Error(data?.error || "Could not send your message.");
+    const err = data?.error;
+    const message =
+      typeof err === "string"
+        ? err
+        : err && typeof err === "object" && "message" in err
+          ? String((err as { message: unknown }).message)
+          : "Could not send your message.";
+    throw new Error(message);
   }
 }
 
