@@ -2,7 +2,17 @@ import { useState } from "react";
 import { ArrowUpRight, Mail, MapPin, Check, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactImg from "@/assets/contact-interior.jpg";
-import { type InquiryPayload } from "../../lib/inquiryEmail";
+import {
+  buildInquiryPlainSummary,
+  buildInquirySubject,
+  type InquiryPayload,
+} from "../../lib/inquiryEmail";
+
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
+  | string
+  | undefined;
+
+const BUSINESS_NAME = "Monster Project Group";
 
 const PROJECT_TYPE_LABEL: Record<string, string> = {
   "new-construction": "New Construction",
@@ -71,22 +81,30 @@ function buildSubmissionPayload(form: FormData): InquiryPayload {
 }
 
 async function sendContactForm(payload: InquiryPayload) {
-  const res = await fetch("/api/contact", {
+  if (!WEB3FORMS_ACCESS_KEY) {
+    throw new Error("Contact form is not configured yet.");
+  }
+
+  const subject = buildInquirySubject(payload.name, payload.typeLabel);
+  const summary = buildInquiryPlainSummary(payload);
+
+  const res = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({
+      access_key: WEB3FORMS_ACCESS_KEY,
+      from_name: BUSINESS_NAME,
+      subject,
+      email: payload.email,
+      replyto: payload.email,
+      botcheck: "",
+      "Inquiry Summary": summary,
+    }),
   });
 
   const data = await res.json().catch(() => ({}));
-  if (!res.ok || !data?.ok) {
-    const err = data?.error;
-    const message =
-      typeof err === "string"
-        ? err
-        : err && typeof err === "object" && "message" in err
-          ? String((err as { message: unknown }).message)
-          : "Could not send your message.";
-    throw new Error(message);
+  if (!res.ok || !data?.success) {
+    throw new Error(data?.message || "Could not send your message.");
   }
 }
 
