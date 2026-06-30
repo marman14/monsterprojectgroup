@@ -2,49 +2,8 @@ import { useState } from "react";
 import { ArrowUpRight, Mail, MapPin, Check, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactImg from "@/assets/contact-interior.jpg";
-import {
-  buildInquiryPlainSummary,
-  buildInquirySubject,
-  type InquiryPayload,
-} from "../../lib/inquiryEmail";
 
-const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
-  | string
-  | undefined;
-
-const BUSINESS_NAME = "Monster Project Group";
-
-const PROJECT_TYPE_LABEL: Record<string, string> = {
-  "new-construction": "New Construction",
-  renovation: "Renovation",
-  commercial: "Commercial",
-  "project-recovery": "Project Recovery",
-  other: "Other",
-};
-
-const BUDGET_LABEL: Record<string, string> = {
-  "under-250k": "Under $250K",
-  "250k-500k": "$250K–$500K",
-  "500k-1m": "$500K–$1M",
-  "1m-5m": "$1M–$5M",
-  "5m-plus": "$5M+",
-};
-
-const START_DATE_LABEL: Record<string, string> = {
-  "already-started": "Already started",
-  "within-3-months": "Within 3 months",
-  "3-6-months": "3–6 months",
-  "6-12-months": "6–12 months",
-  planning: "Planning phase",
-};
-
-const REFERRAL_LABEL: Record<string, string> = {
-  google: "Google",
-  referral: "Referral",
-  "social-media": "Social Media",
-  "drive-by": "Drive-by",
-  other: "Other",
-};
+const APPS_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL as string | undefined;
 
 const INITIAL_FORM = {
   name: "",
@@ -62,49 +21,41 @@ const INITIAL_FORM = {
 
 type FormData = typeof INITIAL_FORM;
 
-function buildSubmissionPayload(form: FormData): InquiryPayload {
-  const typeLabel = PROJECT_TYPE_LABEL[form.type] || form.type;
-
-  return {
-    name: form.name,
-    email: form.email,
-    phone: form.phone || "—",
-    location: form.location,
-    typeLabel,
-    budget: form.budget ? BUDGET_LABEL[form.budget] || form.budget : "—",
-    startDate: form.startDate
-      ? START_DATE_LABEL[form.startDate] || form.startDate
-      : "—",
-    referral: form.referral ? REFERRAL_LABEL[form.referral] || form.referral : "—",
-    message: form.message,
-  };
-}
-
-async function sendContactForm(payload: InquiryPayload) {
-  if (!WEB3FORMS_ACCESS_KEY) {
+async function sendContactForm(form: FormData) {
+  if (!APPS_SCRIPT_URL) {
     throw new Error("Contact form is not configured yet.");
   }
 
-  const subject = buildInquirySubject(payload.name, payload.typeLabel);
-  const summary = buildInquiryPlainSummary(payload);
-
-  const res = await fetch("https://api.web3forms.com/submit", {
+  // text/plain avoids CORS preflight issues with Google Apps Script web apps
+  const res = await fetch(APPS_SCRIPT_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    mode: "cors",
+    redirect: "follow",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify({
-      access_key: WEB3FORMS_ACCESS_KEY,
-      from_name: BUSINESS_NAME,
-      subject,
-      email: payload.email,
-      replyto: payload.email,
-      botcheck: "",
-      "Inquiry Summary": summary,
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim(),
+      location: form.location.trim(),
+      type: form.type,
+      budget: form.budget,
+      startDate: form.startDate,
+      message: form.message.trim(),
+      referral: form.referral,
+      website: form.website,
     }),
   });
 
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok || !data?.success) {
-    throw new Error(data?.message || "Could not send your message.");
+  const text = await res.text();
+  let data: { ok?: boolean; error?: string } = {};
+  try {
+    data = JSON.parse(text) as { ok?: boolean; error?: string };
+  } catch {
+    throw new Error("Could not send your message.");
+  }
+
+  if (!data.ok) {
+    throw new Error(data.error || "Could not send your message.");
   }
 }
 
@@ -132,8 +83,7 @@ const Contact = () => {
 
     setSubmitting(true);
     try {
-      const payload = buildSubmissionPayload(form);
-      await sendContactForm(payload);
+      await sendContactForm(form);
 
       setSubmitted(true);
       toast({

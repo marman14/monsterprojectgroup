@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * End-to-end contact form test from localhost (FormSubmit requires a browser origin).
+ * End-to-end contact form test from localhost (Apps Script requires a browser origin).
  */
 import puppeteer from "puppeteer-core";
 
@@ -44,15 +44,15 @@ try {
   const [response] = await Promise.all([
     page.waitForResponse(
       (res) =>
-        res.url().includes("formsubmit.co/ajax/") && res.request().method() === "POST",
+        res.url().includes("script.google.com/macros/") && res.request().method() === "POST",
       { timeout: 30000 }
     ),
     page.click('form button[type="submit"]'),
   ]);
 
   const body = await response.json().catch(() => ({}));
-  console.log("FormSubmit status:", response.status());
-  console.log("FormSubmit response:", JSON.stringify(body));
+  console.log("Apps Script status:", response.status());
+  console.log("Apps Script response:", JSON.stringify(body));
 
   await page.waitForFunction(
     () => document.body.innerText.includes("Thank you"),
@@ -60,7 +60,7 @@ try {
   );
 
   console.log("UI success toast confirmed.");
-  process.exit(body?.success === true || body?.success === "true" ? 0 : 1);
+  process.exit(body?.ok === true ? 0 : 1);
 } catch (err) {
   console.error("Test failed:", err.message);
   process.exit(1);

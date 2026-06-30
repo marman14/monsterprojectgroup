@@ -1,5 +1,6 @@
 import RenoNavbar from "@/components/RenoNavbar";
 import RenoHero from "@/components/RenoHero";
+import RenoBeforeAfter from "@/components/RenoBeforeAfter";
 import RenoHowItWorks from "@/components/RenoHowItWorks";
 import RenoServices from "@/components/RenoServices";
 import RenoGallery from "@/components/RenoGallery";
@@ -14,6 +15,7 @@ const RenoIndex = () => {
       <RenoNavbar />
       <main>
         <RenoHero />
+        <RenoBeforeAfter />
         <RenoHowItWorks />
         <RenoServices />
         <RenoGallery />

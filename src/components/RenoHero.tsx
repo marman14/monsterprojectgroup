@@ -1,97 +1,56 @@
-import { ArrowUpRight, ArrowDown } from "lucide-react";
-import heroKitchen from "@/assets/reno-hero-kitchen.png";
-
-const stats = [
-  { value: "200+", label: "Projects Completed" },
-  { value: "15+", label: "Years Experience" },
-  { value: "100%", label: "Client Satisfaction" },
-  { value: "$500M+", label: "Managed in Projects" },
-];
+import heroImg from "@/assets/reno-hero-poster.png";
 
 const RenoHero = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
-      {/* Full-bleed background image */}
+    <section className="relative w-full min-h-[100vh] overflow-hidden">
+      {/* Full-bleed background with Ken Burns animation */}
       <div className="absolute inset-0">
         <img
-          src={heroKitchen}
-          alt="Luxury renovated kitchen by Monster Project Group"
-          className="h-full w-full object-cover"
+          src={heroImg}
+          alt="Beautifully renovated open-concept home by Monster Project Group"
+          className="h-full w-full object-cover animate-ken-burns"
         />
-        {/* Strong dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#121C24]/85 via-[#121C24]/60 to-[#121C24]/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121C24]/60 via-transparent to-transparent" />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-center min-h-screen pt-24 pb-20">
-        <div className="max-w-2xl">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-8 animate-fade-in">
-            <span className="h-px w-12 bg-[#1A3EFF]" />
-            <span className="text-[11px] uppercase tracking-[0.3em] text-white/70 font-medium">
-              Fort Lauderdale, FL · South Florida
-            </span>
-          </div>
+      {/* Content — centered like reference */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[100vh] px-6 text-center">
+        {/* Main headline — big, bold, and readable */}
+        <h1 className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] max-w-5xl mx-auto mb-8">
+          Design, Construction, and Management:
+          <span className="block text-[#7BBFE8] mt-2 text-3xl sm:text-4xl md:text-5xl font-light">
+            Our local experts simplify the process to make the most out of your home.
+          </span>
+        </h1>
 
-          {/* Headline */}
-          <h1
-            className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-[1.02] mb-6 animate-fade-in"
-            style={{ animationDelay: "100ms" }}
-          >
-            Renovations that{" "}
-            <span className="block italic text-[#7BBFE8] font-light">
-              elevate your home.
-            </span>
-          </h1>
-
-          {/* Subheading */}
-          <p
-            className="text-lg md:text-xl text-white/75 leading-relaxed mb-10 max-w-xl animate-fade-in"
-            style={{ animationDelay: "250ms" }}
-          >
-            Monster Project Group delivers expert owner's representation and renovation management for kitchens, bathrooms, and full home transformations across South Florida — on time, on budget, every time.
-          </p>
-
-          {/* CTAs */}
-          <div
-            className="flex flex-wrap items-center gap-4 animate-fade-in"
-            style={{ animationDelay: "400ms" }}
-          >
-            <a
-              href="#contact"
-              id="hero-get-started"
-              className="group inline-flex items-center gap-3 bg-[#1A3EFF] text-white text-[11px] uppercase tracking-[0.22em] font-bold px-8 py-4 rounded-full transition-all duration-400 hover:bg-[#1533CE] hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5"
-            >
-              Get a Free Estimate
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
-            </a>
-            <a
-              href="#how-it-works"
-              className="inline-flex items-center gap-3 border border-white/40 text-white text-[11px] uppercase tracking-[0.22em] font-medium px-8 py-4 rounded-full transition-all duration-400 hover:border-white hover:bg-white/10"
-            >
-              See How It Works
-            </a>
-          </div>
-        </div>
-
-        {/* Stats bar */}
-        <div
-          className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10 animate-fade-in"
-          style={{ animationDelay: "600ms" }}
+        {/* CTA */}
+        <a
+          href="#contact"
+          id="hero-cta"
+          className="inline-block bg-[#1A3EFF] text-white font-bold text-base md:text-lg uppercase tracking-wider px-12 py-5 rounded-full shadow-2xl shadow-blue-600/30 transition-all duration-300 hover:bg-[#1533CE] hover:scale-105"
         >
-          {stats.map((s) => (
-            <div key={s.label} className="bg-white/5 px-6 py-5 text-center hover:bg-white/10 transition-colors duration-300">
-              <div className="text-3xl font-bold text-white">{s.value}</div>
-              <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/55 font-medium">{s.label}</div>
-            </div>
-          ))}
+          Get Started
+        </a>
+
+        {/* Two cards — like reference */}
+        <div className="grid sm:grid-cols-2 gap-6 mt-16 max-w-3xl w-full">
+          <a href="#services" className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 text-left transition-all duration-300 hover:bg-white/20 hover:border-white/40">
+            <h2 className="text-white text-2xl md:text-3xl font-bold mb-3">Renovate to Stay</h2>
+            <p className="text-white/70 text-base leading-relaxed">Love your home now and build future equity.</p>
+            <span className="inline-block mt-4 text-[#7BBFE8] font-semibold text-sm uppercase tracking-wider group-hover:underline">Learn More →</span>
+          </a>
+          <a href="#services" className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 text-left transition-all duration-300 hover:bg-white/20 hover:border-white/40">
+            <h2 className="text-white text-2xl md:text-3xl font-bold mb-3">Renovate to Sell</h2>
+            <p className="text-white/70 text-base leading-relaxed">Designed to sell faster and for maximum profit.</p>
+            <span className="inline-block mt-4 text-[#7BBFE8] font-semibold text-sm uppercase tracking-wider group-hover:underline">Learn More →</span>
+          </a>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-bounce">
-        <ArrowDown className="h-5 w-5" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-bounce z-10">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
       </div>
     </section>
   );

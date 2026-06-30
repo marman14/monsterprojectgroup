@@ -16,8 +16,8 @@
 
 const CONFIG = {
   TO: 'office@monsterprojectgroup.com',
-  SENDER_NAME: 'MPG Website',
-  SUBJECT_PREFIX: 'New Project Inquiry',
+  SENDER_NAME: 'Monster Project Group',
+  SUBJECT_PREFIX: 'Monster Project Group — New Project Inquiry',
 };
 
 const PROJECT_TYPE_LABEL = {
