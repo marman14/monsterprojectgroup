@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Mail, MapPin, Check, Clock } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Check, Clock, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactImg from "@/assets/contact-interior.jpg";
 import {
@@ -141,6 +141,11 @@ const Contact = () => {
         description:
           "A member of the MPG team will review your submission and respond within one business day.",
       });
+
+      // Google Ads conversion: project inquiry submitted
+      (window as any).gtag?.('event', 'conversion', {
+        send_to: 'AW-18513729169/epqZCPfx1aIdEJGthPxE',
+      });
       setForm(INITIAL_FORM);
       setTimeout(() => setSubmitted(false), 4000);
     } catch (err) {
@@ -190,6 +195,18 @@ const Contact = () => {
             </div>
 
             <div className="mt-10 space-y-5">
+              <a
+                href="tel:+15703397793"
+                className="flex items-center gap-4 text-primary-foreground/80 hover:text-accent transition-colors duration-500"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20">
+                  <Phone className="h-4 w-4" />
+                </span>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/50">Phone</div>
+                  <div className="font-serif text-lg">(570) 339-7793</div>
+                </div>
+              </a>
               <a
                 href="mailto:office@monsterprojectgroup.com"
                 className="flex items-center gap-4 text-primary-foreground/80 hover:text-accent transition-colors duration-500"
@@ -263,7 +280,7 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-6">
                 <Field label="Full Name" name="name" value={form.name} onChange={handleChange} required placeholder="Your full name" />
                 <Field label="Email Address" name="email" type="email" value={form.email} onChange={handleChange} required placeholder="your@email.com" />
-                <Field label="Phone Number" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="(305) 000-0000" />
+                <Field label="Phone Number" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="(570) 339-7793" />
                 <Field label="Project Location" name="location" value={form.location} onChange={handleChange} required placeholder="City, County, or Address" />
 
                 <div className="space-y-2">

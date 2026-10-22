@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Phone } from "lucide-react";
 
 const links = [
   { label: "Approach", href: "#approach" },
@@ -28,13 +28,23 @@ const Navbar = () => {
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
-          className="group inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/5 backdrop-blur px-5 py-2.5 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-all duration-500 hover:bg-accent hover:text-accent-foreground hover:border-accent"
-        >
-          Get Started
-          <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:rotate-45" />
-        </a>
+        <div className="flex items-center gap-3 sm:gap-6">
+          <a
+            href="tel:+15703397793"
+            aria-label="Call (570) 339-7793"
+            className="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-primary-foreground/80 hover:text-accent transition-colors duration-500"
+          >
+            <Phone className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">(570) 339-7793</span>
+          </a>
+          <a
+            href="#contact"
+            className="group inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/5 backdrop-blur px-5 py-2.5 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-all duration-500 hover:bg-accent hover:text-accent-foreground hover:border-accent"
+          >
+            Get Started
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:rotate-45" />
+          </a>
+        </div>
       </div>
     </header>
   );
